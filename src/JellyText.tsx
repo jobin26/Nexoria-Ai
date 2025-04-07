@@ -1,7 +1,11 @@
-// components/JellyText.jsx
 import { motion } from "framer-motion";
 
-const JellyText = ({ text, className = "" }) => {
+interface JellyTextProps {
+  text: string;
+  className?: string;
+}
+
+const JellyText = ({ text, className = "" }: JellyTextProps) => {
   return (
     <motion.span
       className={`inline-block font-bold ${className}`}

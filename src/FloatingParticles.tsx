@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 
-export default function GooeyGalaxyParticles() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+interface Position {
+  x: number;
+  y: number;
+}
+
+export default function FloatingParticles() {
+  const [mousePos, setMousePos] = useState<Position>({ x: 0, y: 0 });
   const particleCount = 70;
 
-  const [particles, setParticles] = useState([]);
+  const [particles, setParticles] = useState<Position[]>([]);
 
   useEffect(() => {
     const positions = Array.from({ length: particleCount }).map(() => ({
@@ -15,7 +20,7 @@ export default function GooeyGalaxyParticles() {
   }, []);
 
   useEffect(() => {
-    const updateMouse = (e) => {
+    const updateMouse = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", updateMouse);
@@ -24,7 +29,6 @@ export default function GooeyGalaxyParticles() {
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
-      {/* Gooey effect container */}
       <div
         className="absolute inset-0"
         style={{
