@@ -3,8 +3,10 @@ import { Brain, Globe2, Menu, X, ChevronRight, Mail, Phone, MapPin } from 'lucid
 import bgImage from '../assets/lady.jpeg';
 import bgImagesecond from '../assets/leftsidero.png';
 import brainimage from '../assets/br.png';
-import FloatingParticles from "./floatingParticles"; // Adjust path as needed
-import JellyText from "./JellyText";
+// @ts-ignore
+import FloatingParticles from "./floatingParticles.jsx"; // Adjust path as needed
+// @ts-ignore
+import JellyText from "./jellyText.jsx";
 
 
 function GlitchText({ text }: { text: string }) {
